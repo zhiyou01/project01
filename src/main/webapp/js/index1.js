@@ -40,12 +40,14 @@ $(window).scroll(function () {
         });
     }
 });
+
+
 // 登录注册显示和消失弹出框
-$('#reg_open').click(function () {
+$("#reg_open").click(function () {
     $('#reg').removeClass('hidden');
 });
-$('#login_open').click(function () {
-    $('#login').removeClass('hidden');
+$("#login_open").click(function () {
+    $("#login").removeClass("hidden");
 });
 $('#reg_close').click(function(){
     $('#reg').addClass('hidden');
@@ -103,11 +105,8 @@ function GetUrlParam(paraName) {
 
 
 
-//==========================Java02班升级JS===============================
 
 $("#regEmail").blur(function(){
-
-    
     //不为空再校验
     var emailVal=$("#regEmail").val();
     //alert(emailVal);
@@ -115,7 +114,9 @@ $("#regEmail").blur(function(){
     if(null != emailVal && ""!=emailVal){
         var params={"email":emailVal};
        // alert(params);
-        $.post("front/user/validateEmail.action",params,function(data){
+       
+        //提交参数到validateEmail 判断用户名是否重复
+        $.post("validateEmail",params,function(data){
             if(data=="success"){
                regIsCommitEmail=true;
                $("#emailMsg").text("该邮箱可用").css("color","green");
@@ -129,7 +130,7 @@ $("#regEmail").blur(function(){
 });
 
 $("#regPswAgain").blur(function(){
-     var pass01= $("#regPsw").val();
+      var pass01= $("#regPsw").val();
       var pass02= $("#regPswAgain").val();
       if(null==pass01 || ""==pass01 || null==pass02 || ""==pass02){
           $("#passMsg").text("密码不能为空").css("color","red");
@@ -168,8 +169,7 @@ function commitRegForm(){
              // $("#regForm").commit();
              
              $.ajax({
-              
-                url:"front/user/insertUser.action",
+                url:"insertUser",//ajax提交到insertuser进行表单验证
                 data:$("#regForm").serialize(),
                 type:"POST",
                 success:function(data){
@@ -207,18 +207,17 @@ function commitLogin(){
    var password =$("#loginPassword").val();
    if(null!=email && email!="" && null!=password && password!=""){
         var params=$("#loginForm").serialize();
-       // alert(params);
+        // alert(params);
         // post要小写
-        $.post("front/user/loginUser.action",params,function(data){
+        //将参数提交到用户登录controller  数据进行ajax验证
+        $.post("loginUser",params,function(data){
         // alert(data);
                  if(data=='success'){
                       document.location.reload();
                    }
         });
-        
         return false;
    }
-   
    return false;
 }
 
