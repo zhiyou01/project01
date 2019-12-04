@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,7 @@
 <meta name="renderer" content="webkit">
 <meta name="keywords" content="Web前端视频教程,大数据视频教程,HTML5视频教程,UI视频教程,PHP视频教程,java视频教程,python基础教程">
 <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
+<meta name="author" content="张育伟">
 
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/css.css">
@@ -26,13 +29,21 @@
                 <!-- 退出当前登录用户  -->
                 
                 <!-- 点击判断当前是否有用户，有跳到个人空间，没有跳到登录  -->
-				<a href="personalspace">${user.username}</a>
+				<!-- 判断是否有用户，如果有，则显示用户账号和头像，如果没有，显示登录按钮 -->
+				<c:if test="${!empty user }">
+					<a href="personalspace?id=${user.id}">${user.accounts}
+					<img src="${user.imgurl}" draggable="false" width="30px;" >
+					</a>
+				</c:if>
+				<c:if test="${empty user}">
+					<a id="login_open">点击登录</a>
+				</c:if>
 			</div>
 		<!-- 点击收藏  -->
 		<a onclick="JavaScript:addFavorite2()"><img src="projectimg/sc.png" draggable="false">加入收藏</a>
 		
 		<!-- 点击进入后台管理的登录界面  普通用户点击无效 -->
-		<a target="_blank" href="adminLogin"><img src="projectimg/we.png" draggable="false">后台管理</a>
+		<a target="_blank" href="adminLogin?id=${user.id}"><img src="projectimg/we.png" draggable="false">后台管理</a>
 		
 		<a class="color_e4"><img src="projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 	</div>
@@ -52,7 +63,7 @@
                     <tbody><tr>
                         <td colspan="2">
                             <!--点击跳到课程详情页-->
-                            <a   id="login_open">
+                            <a href="webClass">
                                 <img src="projectimg/html5.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>Web前端教程</span>
@@ -195,20 +206,20 @@
 			<img src="projectimg/logo.png" alt="" class="ma">
 		</div>
 		<div class="mask_content_body">
-			<form id="loginForm" action="login">
+			<form id="loginForm" action="login" method="post">
 			<!-- 登录  提交到login -->
 				<h3>快速登录</h3>
-				<input id="loginEmail" placeholder="请输入邮箱"  name="email" type="email">
+				<input id="loginEmail" placeholder="请输入邮箱"  name="accounts" type="email">
 				<input id="loginPassword" placeholder="请输入密码" name="password" type="password">
 				<div id="forget">
 				
-				<!-- 忘记密码 跳到forgetpassword -->
-					<a href="forgetPassword">忘记密码？</a>
+				<!-- 忘记密码 跳到forgetpassword 后台获取当前输入框中 -->
+				    <a id="reg_open">注册</a>
+					<a href="http://localhost:8080/VideoProject/jsp/forgetPassword.jsp">忘记密码？</a>
 				</div>
 				
 				<!-- 有一个点击事件 获取到输入框输入的邮箱密码 进行Ajax验证  -->
-				<input onclick="return commitLogin()" value="登　录" type="submit">
-			
+				<input  value="登　录" type="submit">
 			</form>
 		</div>
 		<div class="mask_content_footer">
@@ -222,9 +233,9 @@
 			<img src="projectimg/logo.png" alt="" class="ma">
 		</div>
 		<div class="mask_content_body">
-			<form id="regForm" action="insertUser">
+			<form id="regForm" action="insertUser" method="post">
 				<h3>新用户注册</h3>
-				<input id="regEmail" placeholder="请输入邮箱" name="email" type="email"><span id="emailMsg"></span>
+				<input id="regEmail" placeholder="请输入邮箱" name="accounts" type="email"><span id="emailMsg"></span>
 				<input id="regPsw" placeholder="请输入密码" name="password" type="password">
 				<input id="regPswAgain" placeholder="请再次输入密码" name="psw_again" type="password"><span id="passMsg"></span>
 				<div id="yzm" class="form-inline">
@@ -232,7 +243,7 @@
 					<div id="v_container" style="width: 45%;height: 40px;float:right;"><canvas id="verifyCanvas" width="100" height="38" style="cursor: pointer;">您的浏览器版本不支持canvas</canvas><canvas id="verifyCanvas" width="100" height="38" style="cursor: pointer;">您的浏览器版本不支持canvas</canvas></div>
 				</div>
 				<!-- 点击事件+表单验证 返回值为false中断操作 -->
-				<input onclick="return commitRegForm();" value="注　册" type="submit">
+				<input  value="注　册" type="submit">
 			</form>
 		</div>
 		<div class="mask_content_footer">
@@ -243,6 +254,6 @@
     
 <script src="js/jquery-1.js"></script>
 <script src="js/gVerify.js"></script>
-<script src="js/index1.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

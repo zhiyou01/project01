@@ -13,10 +13,10 @@
     <meta name="keywords" content="Web前端视频教程,大数据视频教程,HTML5视频教程,UI视频教程,PHP视频教程,java视频教程,python基础教程">
     <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
     
-<link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/css.css">
-<link rel="icon" href="../projectimg/favicon.png" type="image/png">
-    <link href="./视频播放_files/video-js.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
+<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/css.css">
+<link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
+    <link href="http://localhost:8080/VideoProject/css/video-js.css" rel="stylesheet" type="text/css">
     <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 
 </head>
@@ -27,12 +27,12 @@
 		<span>欢迎来到IT培训的黄埔军校——智游教育！</span>
 			<div id="userBlock" style="float:right">
 				<a >退出</a>
-				<a >${user.username }</a>
+				<a >${user.accounts }</a>
 			</div>
-		<a onclick="JavaScript:addFavorite2()"><img src="../projectimg/sc.png" draggable="false">加入收藏</a>
+		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
 		
-		<a target="_blank"><img src="../projectimg/we.png" draggable="false">后台管理</a>
-		<a class="color_e4"><img src="../projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
+		<a target="_blank"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
+		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 
 	</div>
 </header>
@@ -85,8 +85,8 @@
 				<p class="lecturer">前端开发环境的搭建，包括前端常用开发工具介绍、VS Code下载安装，以及前端开发常用运行工具--浏览器的介绍、Firefox下载安装等内容。帮助大家准备好前端开发环境以便深入学习后续小项目</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">433</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">562</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">433</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">562</span>
 				</div>
 			</div>
 			
@@ -95,8 +95,8 @@
 				<p class="lecturer">前端开发主要技术和在项目中的作用、HTML标签基本结构、HTML文档基本结构、字符编码问题及开发一个简单的页面。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">365</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">596</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">365</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">596</span>
 				</div>
 			</div>
 			
@@ -105,8 +105,8 @@
 				<p class="lecturer"> 新闻页面的开发，包括前端开发中最常用的HTML标签：H1、P、DIV、SPAN、IMG、A等，还包括控制文字、图片、超链接等最常用的CSS样式。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">332</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">1374</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">332</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">1374</span>
 				</div>
 			</div>
 			
@@ -115,8 +115,8 @@
 				<p class="lecturer">个人主页项目的演示、页面结构分析、包括网页常见的构成：页头、LOGO、横幅、导航、主体、页脚等。在页头开发过程中使用了固定位置、定宽居中等常见的布局模式。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">284</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">1692</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">284</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">1692</span>
 				</div>
 			</div>
 			
@@ -125,8 +125,8 @@
 				<p class="lecturer">个人主页项目页面主体部分的开发，大量使用了定宽居中的技术，在我的同学部分还使用了相对定位、绝对定位等非常重要定位技术，还使用了圆形边框等CSS3新技术。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">266</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">1699</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">266</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">1699</span>
 				</div>
 			</div>
 			
@@ -135,8 +135,8 @@
 				<p class="lecturer">个人主页的语义化重构。介绍了H5语义化的意义、将非语义化的DIV+CSS改造成语义化标签的具体实践过程。以及VS Code分割视图在开发中的应用。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">236</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">409</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">236</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">409</span>
 				</div>
 			</div>
 			
@@ -145,8 +145,8 @@
 				<p class="lecturer">个人简历项目的开发。RGB颜色简介，字体简介及安装。本案例重度使用定位技术，使用了CSS3中新增的旋转图形变换技术。以及一些高级CSS选择器。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">232</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">2112</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">232</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">2112</span>
 				</div>
 			</div>
 			
@@ -155,8 +155,8 @@
 				<p class="lecturer">个人简历项目开发的第二部分，包括字体的使用（注意：实际开发中会使用更高级的技术来使用字体）、背景图片的控制、内容溢出控制、绝对定位元素的层次控制、半透明的使用等。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">206</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">1997</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">206</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">1997</span>
 				</div>
 			</div>
 			
@@ -165,8 +165,8 @@
 				<p class="lecturer">场景秀项目是一个手机页面、本部分介绍了响应式开发环境、viewport在响应式开发中的应用、vw/vh等响应式CSS单位的使用、CSS函数calc()在单位混合计算时的使用。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">218</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">1569</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">218</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">1569</span>
 				</div>
 			</div>
 			
@@ -175,8 +175,8 @@
 				<p class="lecturer">场景秀动画部分的开发、本部分是场景秀开发的最出彩最重要的部分。包括关键帧动画的定义、平移动画、绽放动画等动画效果的实现方法。H5音频及JS控制音乐播放暂停。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">223</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">2179</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">223</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">2179</span>
 				</div>
 			</div>
 			
@@ -185,8 +185,8 @@
 				<p class="lecturer">响应式页面开发与移动端适配，重点内容包括vw/vh单位、媒体查询的介绍及在移动端适配中的应用方法。表单及INPUT标签的基本使用和使用CSS控制表单样式的方法等。</p>
 				<p class="lecturer">讲师：赵桂丹</p>
 				<div class="v-info">
-					<span class="count"><img src="../projectimg/count.png" alt="">244</span>
-					<span class="duration"><img src="../projectimg/player.png" alt="">2134</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">244</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">2134</span>
 				</div>
 			</div>
 			
@@ -203,7 +203,7 @@
 <footer>
 	<ul>
 		<li>
-			<img src="../projectimg/footer_logo.png" alt="" draggable="false">
+			<img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" draggable="false">
 		</li>
 		<li class="mt25">
 			<h3>各校区地址</h3>
@@ -224,8 +224,8 @@
 				<li class="erwei">
 					<br>
 					<div>
-						<img class="weixin" src="../projectimg/a.png" alt="" draggable="false">
-						<img class="weibo" src="../projectimg/a_002.png" alt="" draggable="false">
+						<img class="weixin" src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" draggable="false">
+						<img class="weibo" src="http://localhost:8080/VideoProject/projectimg/a_002.png" alt="" draggable="false">
 					</div>
 				</li>
 			</ul>
@@ -239,7 +239,7 @@
 <div class="mask hidden" id="login">
 	<div class="mask_content">
 		<div class="mask_content_header">
-			<img src="../projectimg/logo.png" alt="" class="ma">
+			<img src="http://localhost:8080/VideoProject/projectimg/logo.png" alt="" class="ma">
 		</div>
 		<div class="mask_content_body">
 			<form id="loginForm" action="http://localhost:8080/Voids/#">
@@ -280,9 +280,9 @@
 		</div>
 	</div>
 </div>
-<script src="../js/jquery-1.js.下载"></script>
-<script src="../js/gVerify.js.下载"></script>
-<script src="../js/index.js.下载"></script>
-<script src="../js/video.js.下载"></script>
+<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
+<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
+<script src="http://localhost:8080/VideoProject/js/index.js"></script>
+<script src="http://localhost:8080/VideoProject/js/video.js"></script>
 </body>
 </html>
