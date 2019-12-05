@@ -2,9 +2,6 @@ package com.zhiyou.controller;
 
 
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -21,6 +18,7 @@ import com.zhiyou.service.UserService;
 import com.zhiyou.util.FtpUtil;
 
 @Controller
+@RestController
 public class UserController {
 	@Autowired
 	UserService Service;
@@ -38,6 +36,8 @@ public class UserController {
 		User user = Service.selectByAccounts(user1.getAccounts());
 		req.setAttribute("user", user);
 		req.getRequestDispatcher("index.jsp").forward(req, resp);
+//		Service.addUser(user1);
+//		return new ResponseVo<User>(200, "", null);
 		
 	}
 	/**
@@ -90,6 +90,23 @@ public class UserController {
 		req.setAttribute("user",user);
 		req.getRequestDispatcher("jsp/updatepwd.jsp").forward(req, resp);
 	}
+	@RequestMapping("/updatepassword")
+	public void updatepassword(User user1,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		//System.out.println(user1);
+		Service.updateUser(user1);
+		User user = Service.selectById(user1.getId());
+		req.setAttribute("user",user);
+		resp.sendRedirect("index.jsp");
+	}
+	@RequestMapping("/jsp/forgetpwd")
+	public void forgetpwd(User user1,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		User user = Service.selectByAccounts(user1.getAccounts());
+		user.setPassword(user1.getPassword());
+		Service.updateUser(user);
+//		req.getRequestDispatcher("/index.jsp").forward(req, resp);
+		resp.sendRedirect("index.jsp");
+	}
+	
 	/**
 	 * @修改头像
 	 * @param id
@@ -106,19 +123,18 @@ public class UserController {
 	}
 	@RequestMapping("/upload")
 	public void upload2(MultipartFile image_file,HttpServletRequest req,HttpServletResponse resp) throws Exception {
-	    String url = FtpUtil.upload(image_file.getInputStream(), image_file.getOriginalFilename());
-	    System.out.println(url);//url
-	    System.out.println(req.getParameter("id"));
+	    
+		//头像上传到服务器
+		String url = FtpUtil.upload(image_file.getInputStream(), image_file.getOriginalFilename());
+	   
 		
 	    User user = new User();
 	    user.setImgurl(url);
 	    user.setId(Integer.valueOf(req.getParameter("id")));
 	    Service.updateUser(user);
-		
+	
 	    User user1 = Service.selectById(Integer.valueOf(req.getParameter("id")));
 		req.setAttribute("user", user1);
-		req.getRequestDispatcher("jsp/personalspace.jsp").forward(req, resp);
-//		
-		
+		req.getRequestDispatcher("jsp/personalspace.jsp").forward(req, resp);			
 	}
 }

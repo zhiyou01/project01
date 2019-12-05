@@ -14,21 +14,91 @@ import com.zhiyou.service.UserService;
 public class LoginController {
 	@Autowired
 	UserService service;
-	//登录
+	
+	
+	/**
+	 * @登录
+	 * @param accounts
+	 * @param password
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
 	@RequestMapping("/login")
 	public void  login(String accounts,String password,HttpServletRequest req,HttpServletResponse resp) throws Exception {
-		System.out.println("进来了");
-		
 		User user = service.loginSelect(req, accounts, password);
-		
-		if(user==null) {
-			req.getRequestDispatcher("index.jsp").forward(req, resp);
-		}else {
-			//req.getSession().getServletContext().setAttribute("nowuser", user);
-			req.setAttribute("user", user);
-			req.getRequestDispatcher("index.jsp").forward(req, resp);
-		}
+		req.setAttribute("user", user);
+		req.getRequestDispatcher("index.jsp").forward(req, resp);
 	}
 	
+	/**
+	 * @账号的ajax验证
+	 * @param name
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("/loginjudge")
+	public void  loginjudge(String name,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		 User user=new User();
+         user.setAccounts(name);
+	     boolean b = service.selectUser(user);
+	     resp.getWriter().write(b+""); 	
+	}
+	/**
+	 * @密码的ajax验证
+	 * @param name
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("/pwdjudge")
+	public void  pwdjudge(String name1,String name2,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+         User user=new User();
+         user.setPassword(name1);
+         user.setAccounts(name2);
+         System.out.println(user);
+	     boolean b = service.selectUser(user);
+	     resp.getWriter().write(b+""); 	
+	}
+	/**
+	 * @注册的邮箱账号Ajax验证
+	 * @param name
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("/validateEmail")
+	public void  validateEmail(String name,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		User user=new User();
+        user.setAccounts(name);
+	    boolean b = service.selectUser(user);
+	    resp.getWriter().write(b+""); 	
+	}
+	
+	/**
+	 * @修改密码
+	 * @param name
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("/jsp/loginjudge")
+	public void  jsploginjudge(String name,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		 User user=new User();
+         user.setAccounts(name);
+	     boolean b = service.selectUser(user);
+	     resp.getWriter().write(b+""); 	
+	}
+	
+	@RequestMapping("/jsp/pwdjudge")
+	public void  jsppwdjudge(String name1,String name2,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+         User user=new User();
+         user.setPassword(name1);
+         user.setAccounts(name2);
+         System.out.println(user);
+	     boolean b = service.selectUser(user);
+	     resp.getWriter().write(b+""); 	
+	}
 	
 }

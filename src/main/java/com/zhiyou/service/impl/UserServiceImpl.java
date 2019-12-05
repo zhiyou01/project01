@@ -1,5 +1,7 @@
 package com.zhiyou.service.impl;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,15 @@ public class UserServiceImpl implements UserService{
 
 	public void updateUser(User user) {
 		dao.updateUser(user);
+	}
+
+	public boolean selectUser(User user) {
+		List<User> list = dao.selectUser(user);
+		if (list.size()!=0) {
+			return true;//true´ú±íÓÐ
+		}else {
+			return false;
+		}
 	}
 
 }

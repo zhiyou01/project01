@@ -1,5 +1,7 @@
 package com.zhiyou.dao;
 
+import java.util.List;
+
 import com.zhiyou.pojo.User;
 
 public interface UserDao {
@@ -12,4 +14,6 @@ public interface UserDao {
 	void  addUser(User user);
 //  4.用户修改
 	void updateUser(User user);
+//	5.查找用户
+	List<User> selectUser(User user);
 }

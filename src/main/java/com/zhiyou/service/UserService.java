@@ -1,5 +1,7 @@
 package com.zhiyou.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.zhiyou.pojo.User;
@@ -19,4 +21,7 @@ public interface UserService {
 	
 //  4.用户修改
 	void updateUser(User user);
+	
+//	5.查找用户
+	boolean selectUser(User user);
 }

@@ -70,21 +70,22 @@
 							</c:if>    
                         </div>
                         <div class="profile_ifo_area">
-                            <form action="" method="post">
+                            <form action="updatepassword" method="post">
+                                <input name="id" value="${user.id }" type="hidden">
                                 <div class="form_group">
                                     <span class="dd">旧　密　码：</span>
-                                    <input  type="password"><span id="oldMsg"></span>
+                                    <input id="oldMsg" type="password"><span id="oldMsg1"></span>
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">新　密　码：</span>
-                                    <input  type="password">
+                                    <input id="newMsg"  type="password"><span id="newMsg1"></span>
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">确认新密码：</span>
-                                    <input  type="password"><span id="passMsg"></span>
+                                    <input id=newMsgAgain type="password" name="password"><span id="passMsg"></span>
                                 </div>
                                 <div class="form_submit dd">
-                                    <input value="保　存" type="submit">
+                                    <input onclick="return commitForm();" value="保　存" type="submit">
                                     <a >取消</a>
                                 </div>
                             </form>
@@ -94,9 +95,6 @@
             </div>
         </div>
     </main>
-    
-
-
 <footer>
 	<div class="container">
 		<ul>
@@ -106,5 +104,75 @@
 		</ul>
 	</div>
 </footer>
+
+<script src="js/jquery-1.js"></script>
+<script src="js/gVerify.js"></script>
+<script type="text/javascript">
+var regIsCommitPsw=false;
+var regIsCommitPsw1=false;
+var regIsCommitPsw2=false;
+//1.输入旧密码与当前密码相同
+$("#oldMsg").blur(function(){
+      var pass01= $("#oldMsg").val();
+      if(null==pass01 || ""==pass01 ){
+          $("#oldMsg1").text("密码不能为空").css("color","red");
+          regIsCommitPsw =false;
+      }else{
+    	  if(pass01 != ${user.password}){
+    		  $("#oldMsg1").text("密码错误").css("color","red");
+    		  regIsCommitPsw =false;
+    	  }else{
+    		  regIsCommitPsw=true;
+	          $("#oldMsg1").text("");
+    	  }
+      }
+});
+
+$("#newMsg").blur(function(){
+	 var pass03= $("#oldMsg").val();
+     var pass01= $("#newMsg").val();
+     if(null==pass01 || ""==pass01  ){
+         $("#newMsg1").text("密码不能为空").css("color","red");
+         regIsCommitPsw1 =false;
+     }else{
+    	 if(pass03==pass01){
+    		 regIsCommitPsw1 =false;
+    	   $("#newMsg1").text("新密码不能和旧密码相同").css("color","red");
+    	   }else{
+    		   regIsCommitPsw1=true;
+               $("#newMsg1").text("");
+    	   }
+     }
+});
+
+
+$("#newMsgAgain").blur(function(){
+      var pass01= $("#newMsg").val();
+      var pass02= $("#newMsgAgain").val();
+   
+      if(null==pass01 || ""==pass01 || null==pass02 || ""==pass02){
+          $("#passMsg").text("密码不能为空").css("color","red");
+          regIsCommitPsw2 =false;
+      }else{
+          if(pass01!=pass02){
+        	  regIsCommitPsw2=false;
+              $("#passMsg").text("两次密码输入不一致，请重新输入").css("color","red");
+          }else{
+        	  regIsCommitPsw2=true;
+              $("#passMsg").text("");
+          }
+      }
+});
+
+function commitForm(){
+
+	if(regIsCommitPsw==true&& regIsCommitPsw1==true&&regIsCommitPsw2==true){
+		return  true;
+	}else{
+		return  false;
+	}
+	
+}
+</script>
 </body>
 </html>

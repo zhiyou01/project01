@@ -34,17 +34,14 @@
 				<li class="menu_active"><a>忘记密码</a></li>
 			</ul>
 			<div id="user_bar">
-				<a>
-					<img id="avatar" src="../projectimg/avatar_lg.png">
-				</a>
+				<a><img id="avatar" src="../projectimg/avatar_lg.png"></a>
 				<a href="http://localhost:8080/VideoProject/index.jsp">退出</a>
 			</div>
 		</div>
 	</menu>
 </header>
-
-   <main>
-        <div class="container">
+<main>
+      <div class="container">
             <h2>忘记密码</h2>
             <div id="profile_tab">
                 <ul class="profile_tab_header f_left clearfix">
@@ -61,21 +58,21 @@
 		                </div>
                         <div class="profile_ifo_area">
                         
-                            <form action="forgetpwd" method="post" id="forgetpwd">
+                            <form action="forgetpwd" method="post" >
                                 <div class="form_group">
                                     <span class="dd">用　户　名：</span>
-                                    <input  type="text"><span name="accounts"></span>
+                                    <input name="accounts" id="accounts" type="text"><span id="accmsg"></span>
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">新　密　码：</span>
-                                    <input  type="password" id="password1">
+                                    <input  type="password" id="password1"><span id="newmsg"></span>
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">确认新密码：</span>
-                                    <input  type="password" id="password2"><span id="oldMsg"></span>
+                                    <input name="password" type="password" id="password2"><span id="oldMsg"></span>
                                 </div>
                                 <div class="form_submit dd">
-                                    <input value="保　存" type="submit">
+                                    <input onclick="return result();" value="保　存" type="submit">
                                     <a >取消</a>
                                 </div>
                             </form>
@@ -88,32 +85,95 @@
 <footer>
 	<div class="container">
 		<ul>
-			<li><img src="../projectimg/footer_logo.png" alt="" id="foot_logo"></li>
+			<li><img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" id="foot_logo"></li>
 			<li>版权所有：智游3G教育　　　©&nbsp;www.zhiyou100.com</li>
-			<li><img src="../projectimg/a.png" alt="" id="wxgzh"></li>
+			<li><img src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" id="wxgzh"></li>
 		</ul>
 	</div>
-
-<script type="text/javascript">
-		$("#forgetpwd").blur(function(){
-		    var pass01= $("#password1").val();
-		    var pass02= $("#password2").val();
-		    if(null==pass01 || ""==pass01 || null==pass02 || ""==pass02){
-		        $("#oldMsg").text("密码不能为空").css("color","red");
-		        regIsCommitPsw =false;
-		    }else{
-		        if(pass01!=pass02){
-		            regIsCommitPsw=false;
-		            $("#oldMsg").text("两次密码输入不一致，请重新输入").css("color","red");
-		        }else{
-		            regIsCommitPsw=true;
-		            $("#oldMsg").text("");
-		        }
-		    }
-		    
-		});
-</script>
-	
 </footer>
+
+<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
+<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
+<script type="text/javascript">
+//忘记密码修改密码
+var flag=false;
+var flag1=false;
+var flag2=false;
+$("#accounts").blur(function(){
+    var msg=$("#accounts").val();
+    if(null != msg && ""!=msg){
+    	$("#accmsg").text("");
+        $.ajax({
+        	type:"post",
+            url:"loginjudge",
+            data:{
+                name:$("#accounts").val(),
+            },
+            success:function(data){
+                if(data=="false"){
+                    $("#accmsg").text("账号不存在，请注册").css("color","red");
+                    flag =false;
+                }else{
+                    $("#accmsg").text("");
+                    flag =true;
+                }
+            }
+        })
+    }else{
+    	$("#accmsg").text("用户名不能为空").css("color","red");
+    }
+});
+
+$("#password1").blur(function(){
+	var pass01= $("#password1").val();
+	if(null==pass01 || ""==pass01 ){
+		  $("#newmsg").text("密码不能为空").css("color","red");
+		  flag1 =false;
+	}else{
+		 $.ajax({
+	        	type:"post",
+	            url:"pwdjudge",
+	            data:{
+	                name1:$("#password1").val(),
+	                name2:$("#accounts").val(),
+	            },
+	            success:function(data){
+	                if(data=="true"){
+	                    $("#newmsg").text("新密码不能和旧密码相同").css("color","red");
+	                    flag1 =false;
+	                }else{
+	                    $("#newmsg").text("");
+	                    flag1 =true;
+	                }
+	            }
+	        })
+	 }
+});
+
+$("#password2").blur(function(){
+	var pass01= $("#password1").val();
+	var pass02= $("#password2").val();
+	if(null==pass01 || ""==pass01 || null==pass02 || ""==pass02){
+		  $("#oldMsg").text("密码不能为空").css("color","red");
+		  flag2 =false;
+	}else{
+		  if(pass01!=pass02){
+	     flag2=false;
+		  $("#oldMsg").text("两次密码输入不一致，请重新输入").css("color","red");
+		 }else{
+		flag2=true;
+		 $("#oldMsg").text("");
+		 }
+	}	    
+});
+
+function result(){
+    if(flag==true&&flag1==true&&flag2==true){
+        return true;
+    }else{
+        return false;
+    }
+}
+</script>
 </body>
 </html>

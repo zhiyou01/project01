@@ -17,5 +17,13 @@
     <servlet-name>VideoProject</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
+  <filter>
+    <display-name>StyleFilter</display-name>
+    <filter-name>StyleFilter</filter-name>
+    <filter-class>com.zhiyou.controller.StyleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>StyleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

@@ -70,7 +70,8 @@
                             <form   id="upload_form"  action="upload"  method="post"   enctype="multipart/form-data"  >
                                 <input name="id" value="${user.id }" type="hidden">
                                 <p>第一步：请选择图像文件</p>
-                                <div><input name="image_file" id="image_file" onchange="fileSelectHandler()" type="file"></div>
+                                <div>
+                                <input name="image_file" id="image_file" onchange="fileSelectHandler()" type="file"></div>
                                 <div class="error"></div>
                                 <div class="step2">
                                 <p>第二步：请确定,然后按上传</p>
