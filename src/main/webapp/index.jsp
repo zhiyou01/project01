@@ -41,7 +41,7 @@
 		<!-- 点击收藏  -->
 		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
 		<!-- 点击进入后台管理的登录界面  普通用户点击无效 -->
-		<a target="_blank" href="adminLogin?id=${user.id}"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
+		<a target="_blank" href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
 		
 		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 	</div>

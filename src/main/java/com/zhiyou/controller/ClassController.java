@@ -1,5 +1,6 @@
 package com.zhiyou.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,17 +80,36 @@ public class ClassController {
 	@RequestMapping("/playvideo")  //http://localhost:8080/VideoProject/login
 	public  void  playvideo(Integer video_id,Integer subject_id,User user,HttpServletRequest req,HttpServletResponse resp) throws Exception{
 		
-		List<Course> list = Service.selectBySubjectid(subject_id);	
+		/*
+		 * List<Course> list = Service.selectBySubjectid(subject_id);
+		 * 
+		 * //查询video和老师 Video video = videoservice.selectByVideoid(video_id); Speaker
+		 * speaker = speakerservice.selectBySpeakerid(video.getSpeaker_id());
+		 * 
+		 * req.setAttribute("video", video);
+		 * 
+		 * req.setAttribute("speaker", speaker);
+		 * 
+		 * req.setAttribute("list", list);
+		 */
 		
-		//查询video和老师
-		Video video = videoservice.selectByVideoid(video_id);
-		Speaker speaker = speakerservice.selectBySpeakerid(video.getSpeaker_id());
-		
-		req.setAttribute("video", video);
-		req.setAttribute("speaker", speaker);
-		req.setAttribute("list", list);
 		req.setAttribute("user", user);
-		req.setAttribute("subject_id", subject_id);	
+		/* req.setAttribute("subject_id", subject_id); */
+		
+		
+		//获取视频地址和老师信息
+		List<Video> video = videoservice.selectVideoUrl(video_id);
+		
+		//查询课程信息和教师信息
+		List<Video> video2 = videoservice.selectAlls(subject_id);
+		//创建一个集合用来接收以上两条数据
+		List<List> list = new ArrayList<List>();
+		list.add(video);
+		list.add(video2);
+		
+		req.setAttribute("list",list);
+		
+		
 		req.getRequestDispatcher("jsp/playvideo.jsp").forward(req, resp);
 	}
 	

@@ -12,6 +12,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!-- video -->
 		<typeAlias type="com.zhiyou.pojo.Video" alias="video"/>
 		<!-- speaker -->
-		<typeAlias type="com.zhiyou.pojo.Speaker" alias="speaker"/>
+
+		<typeAlias alias="su" type="com.zhiyou.pojo.Subject"/>
+
+		<typeAlias alias="sp" type="com.zhiyou.pojo.Speaker"/>
+		
+		<typeAlias alias="admin" type="com.zhiyou.pojo.Admin"/>
+	
 	</typeAliases>
 </configuration>	

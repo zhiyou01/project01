@@ -8,13 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zhiyou.pojo.User;
+import com.zhiyou.service.AdminService;
 import com.zhiyou.service.UserService;
 
 @Controller
 public class LoginController {
 	@Autowired
 	UserService service;
-	
+	@Autowired
+	AdminService adminservice;
 	
 	/**
 	 * @登录
@@ -46,6 +48,19 @@ public class LoginController {
 	     resp.getWriter().write(b+""); 	
 	}
 	/**
+	 * @admin忘记密码账号验证
+	 * @param name
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("jsp/loginjudge1")
+	public void  loginjudge1(String name,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		 //获的的name为accounts
+		 boolean b = adminservice.selectaccounts(name);
+	     resp.getWriter().write(b+""); 	
+	}
+	/**
 	 * @密码的ajax验证
 	 * @param name
 	 * @param req
@@ -60,6 +75,19 @@ public class LoginController {
          System.out.println(user);
 	     boolean b = service.selectUser(user);
 	     resp.getWriter().write(b+""); 	
+	}
+	/**
+	 * @admin的忘记密码页面密码验证
+	 * @param accounts
+	 * @param pwd
+	 * @param req
+	 * @param resp
+	 * @throws Exception
+	 */
+	@RequestMapping("jsp/pwdjudge1")
+	public void  pwdjudge1(String accounts,String pwd,HttpServletRequest req,HttpServletResponse resp) throws Exception {
+		boolean b = adminservice.select(accounts, pwd, req);
+		resp.getWriter().write(b+""); 	
 	}
 	/**
 	 * @注册的邮箱账号Ajax验证

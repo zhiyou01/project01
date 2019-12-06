@@ -20,4 +20,5 @@ public class Video {
 	
 	//课程的少的一方
     private Course course;
+    private Speaker speaker;
 }
