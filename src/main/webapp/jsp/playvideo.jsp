@@ -55,6 +55,8 @@
 	<div class="container">
 		<div class="v-intro">
 			<div class="left">
+		
+			
 				<video id="videoPlayer" src="${list.get(0).get(0).video_url}" class="video-js vjs-default-skin" controls="controls" poster="${ list.get(0).get(0).image_url}" data-setup="{}" height="280" width="627">
 				</video>
 			</div>
