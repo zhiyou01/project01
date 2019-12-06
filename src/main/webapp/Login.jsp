@@ -53,6 +53,14 @@
     
 <script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
 <script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
+<script type="text/javascript">
+$('#login_close').click(function(){
+ 
+    window.location.href="http://localhost:8080/VideoProject/index.jsp";
+});
+
+
+</script>
 
 <script type="text/javascript">
 

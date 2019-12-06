@@ -30,10 +30,10 @@
 				<a >退出</a>
 				<a >${user.accounts }</a>
 			</div>
-		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/videoimg/sc.png" draggable="false">加入收藏</a>
+		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
 		
-		<a target="_blank"><img src="http://localhost:8080/VideoProject/videoimg/we.png" draggable="false">后台管理</a>
-		<a class="color_e4"><img src="http://localhost:8080/VideoProject/videoimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
+		<a target="_blank"  href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
+		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 
 	</div>
 </header>
@@ -62,7 +62,7 @@
 			</div>
 			
 			<div class="right">
-				<p class="right-title">HTML页面基本结构</p>
+				<p class="right-title">${list.get(0).get(0).title}</p>
 				<div class="avatar">
 					<span style="background-image: url(${list.get(0).get(0).speaker.pic_url})"></span>
 					<p><b>${list.get(0).get(0).speaker.speaker_name}</b><br><i>${list.get(0).get(0).speaker.speaker_desc}</i></p>
@@ -84,15 +84,19 @@
 	<div class="container">
 		<p class="title">目录</p>
 		  <c:forEach begin="0" end="${list.get(1).size()-1}" var="i">
+			
+						
 			<div class="chapter">
-				<p class="biaoti"><a href="">${list.get(1).get(i).title}</a></p>
+				<p class="biaoti"><a href="playvideo?video_id=${list.get(1).get(i).video_id}&subject_id=${list.get(1).get(0).course.subject_id}&id=${user.id}">${list.get(1).get(i).title}</a></p>
 				<p class="lecturer">${list.get(1).get(i).detail }</p>
 				<p class="lecturer">讲师：${list.get(1).get(i).speaker.speaker_name}</p>
 				<div class="v-info">
-					<span class="count"><img src="http://localhost:8080/VideoProject/videoimg/count.png" alt="">${list.get(1).get(i).play_num }</span>
-					<span class="duration"><img src="http://localhost:8080/VideoProject/videoimg/player.png" alt="">${list.get(1).get(i).time }</span>
+					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">${list.get(1).get(i).play_num }</span>
+					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">${list.get(1).get(i).time }</span>
 				</div>
 			</div>
+			
+			
 		  </c:forEach>
 	</div>
 </div>
@@ -104,7 +108,7 @@
 <footer>
 	<ul>
 		<li>
-			<img src="http://localhost:8080/VideoProject/videoimg/footer_logo.png" alt="" draggable="false">
+			<img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" draggable="false">
 		</li>
 		<li class="mt25">
 			<h3>各校区地址</h3>
@@ -125,8 +129,8 @@
 				<li class="erwei">
 					<br>
 					<div>
-						<img class="weixin" src="http://localhost:8080/VideoProject/videoimg/a.png" alt="" draggable="false">
-						<img class="weibo" src="http://http://localhost:8080/VideoProject/videoimg/a_002.png" alt="" draggable="false">
+						<img class="weixin" src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" draggable="false">
+						<img class="weibo" src="http://localhost:8080/VideoProject/projectimg/a_002.png" alt="" draggable="false">
 					</div>
 				</li>
 			</ul>

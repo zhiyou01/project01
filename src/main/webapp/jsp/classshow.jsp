@@ -36,7 +36,7 @@
 			</div>
 
 		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
-		<a target="_blank"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
+		<a target="_blank"  href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
 		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 
 	</div>
@@ -81,7 +81,7 @@
             	<!-- 获取视频 -->
      	                <c:if test="${!empty user }">
 						<li class="section-main" >
-							<a href="playvideo?video_id=${video.video_id}&subject_id=${subject_id}&user=${user}">
+							<a href="playvideo?video_id=${video.video_id}&subject_id=${subject_id}&id=${user.id}">
 							<input type="hidden" id="user_id" value="${user.id}">
 			             	<div class="thum" style="background-image: url(${video.image_url})"></div>
 			             	<p>${video.title}</p>

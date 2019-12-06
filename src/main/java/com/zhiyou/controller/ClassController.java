@@ -78,8 +78,8 @@ public class ClassController {
 	}
 	
 	@RequestMapping("/playvideo")  //http://localhost:8080/VideoProject/login
-	public  void  playvideo(Integer video_id,Integer subject_id,User user,HttpServletRequest req,HttpServletResponse resp) throws Exception{
-		
+	public  void  playvideo(Integer video_id,Integer subject_id,int id,HttpServletRequest req,HttpServletResponse resp) throws Exception{
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		/*
 		 * List<Course> list = Service.selectBySubjectid(subject_id);
 		 * 
@@ -92,6 +92,8 @@ public class ClassController {
 		 * 
 		 * req.setAttribute("list", list);
 		 */
+		User user = service1.selectById(id);
+		
 		
 		req.setAttribute("user", user);
 		/* req.setAttribute("subject_id", subject_id); */
