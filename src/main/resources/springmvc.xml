@@ -20,14 +20,23 @@
 			http://www.springframework.org/schema/aop/spring-aop.xsd
 			http://www.springframework.org/schema/context
 			http://www.springframework.org/schema/context/spring-context.xsd">
+	
 	<!-- 开启mvc注解 -->
 	<mvc:annotation-driven />
+	
+	
 	<!-- 开启静态支持 -->
 	<mvc:default-servlet-handler />
+	
+	
 	<!-- 扫描器 -->
 	<context:component-scan base-package="com.zhiyou"/>
+	
+	
 	<!-- 加载db属性文件 -->
 	<util:properties id="db" location="classpath:db.properties"/>
+	
+	
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="#{db.driver}" />
@@ -35,11 +44,15 @@
 		<property name="username" value="#{db.username}" />
 		<property name="password" value="#{db.password}" />
 	</bean>
+	
+	
 	<!-- 配置视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
 		<property name="prefix" value="/jsp/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
+	
+	
 	<!-- 配置Mybatis SQL session工厂 -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -48,6 +61,8 @@
 		<!-- 指定mapper文件的位置 -->
 		<property name="mapperLocations" value="classpath:mapper/*.xml" />
 	</bean>
+	
+	
 	<!-- 配置dao接口的扫描 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 指定dao层接口所在包的位置 -->
@@ -55,6 +70,8 @@
 		<!-- 引用Mybatis的session工厂 -->
 		<property name="sqlSessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	
 	 <!-- 虽然所有的配置都有默认值，可以不配置，但因为spring类太多了，不知道用户要使用的类，所以需要开发者自己注入该对象到容器 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	     <!-- 文件最大尺寸 -->

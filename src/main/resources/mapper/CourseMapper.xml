@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.zhiyou.dao.CourseDao">
+  	
+  	<resultMap type="course" id="courseMap">
+  		<id column="id" property="id"/>
+  		<result column="Course_title" property="course_title"/>
+  		<result column="course_desc" property="course_desc"/>
+  		<result column="subject_id" property="subject_id"/>
+  		
+		<association property="subject" javaType="com.zhiyou.pojo.Subject">
+			<id column="subject_id" property="subject_id"/>
+			<id column="subject_name" property="subject_name"/>
+		</association>
+		<!-- 映射一个集合对象 -->
+		<collection property="videos" ofType="com.zhiyou.pojo.Video"  >
+			<id column="video_id" property="video_id"/>
+			<id column="title" property="title"/>
+			<id column="speaker_id" property="speaker_id"/>
+			<id column="course_id" property="course_id"/>
+			<result column="datail" property="datail"/>
+			<result column="time" property="time"/>
+			<result column="video_url" property="video_url"/>
+			<result column="image_url" property="image_url"/>
+			<result column="play_num" property="play_num"/>
+		</collection>
+  	</resultMap>
+ 	
+ 	<select id="selectById" resultMap="courseMap" >
+  		select * from course where id=#{id}
+  	</select>
+
+  	<select id="selectBySubjectid" resultMap="courseMap" >
+  		select * from course c , video v where c.subject_id=#{subject_id} and c.id = v.course_id
+  	</select>
+  	
+  </mapper>
+  

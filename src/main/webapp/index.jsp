@@ -48,8 +48,8 @@
 </header>
 
     <!--banner图-->
-    <div class="banner index-banner">
-	<img alt="" src="http://localhost:8080/VideoProject/projectimg/banner-2.jpg">
+    <div class="banner index-banner"  >
+	<img alt="" src="http://localhost:8080/VideoProject/projectimg/banner-2.jpg"  >
 	</div>
 	
     <!--模块化课程-->
@@ -61,7 +61,7 @@
                     <tbody><tr>
                         <td colspan="2">
                             <!--点击跳到课程详情页-->
-                            <a href="webClass">
+                            <a href="webClass?accounts=${user.accounts}">
                                 <img src="http://localhost:8080/VideoProject/projectimg/html5.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>Web前端教程</span>
@@ -71,7 +71,7 @@
                         </td>
                         <td>
                             <!--点击跳到课程详情页-->
-                            <a href="uiClass">
+                            <a href="uiClass?accounts=${user.accounts}">
                                 <img src="http://localhost:8080/VideoProject/projectimg/ui.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>UI设计教程</span>
@@ -101,7 +101,7 @@
                         </td>
                         <td colspan="2">
                         <!--点击跳到课程详情页-->
-                            <a href="pyClass">
+                            <a href="pyClass?accounts=${user.accounts}">
                                 <img src="http://localhost:8080/VideoProject/projectimg/python.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>Python教程</span>
@@ -112,7 +112,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <a href="phpClass">
+                            <a href="phpClass?accounts=${user.accounts}">
                                 <img src="http://localhost:8080/VideoProject/projectimg/php.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>PHP教程</span>

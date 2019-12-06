@@ -8,13 +8,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Video {
-    Integer	video_id;
-	String	title;
-	String	detail;
-	Integer	time;
-	Integer	speaker_id;
-	Integer	course_id;
-	String	video_url;
-	String	image_url;
-	Integer	play_num;
+    private Integer	video_id;
+    private String	title;
+    private String	detail;
+    private Integer	time;
+    private Integer	speaker_id;
+    private Integer	course_id;
+    private String	video_url;
+    private String	image_url;
+    private Integer	play_num;
+	
+	//课程的少的一方
+    private Course course;
 }

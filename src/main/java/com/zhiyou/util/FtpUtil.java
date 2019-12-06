@@ -13,10 +13,10 @@ public class FtpUtil {
 		UUID randomUUID = UUID.randomUUID();
 		filename=randomUUID.toString().replace("-","")+filename;
 		//filename=System.currentTimeMillis()+filename;
-		String url="ftp://192.168.124.60/";
+		String url="ftp://192.168.124.81/";
 		FTPClient ftp = new FTPClient();
 		try {
-			ftp.connect("192.168.124.60");//服务器地址
+			ftp.connect("192.168.124.81");//服务器地址
 			ftp.login("admin", "123");//账号密码
 			ftp.enterLocalPassiveMode();
 			ftp.changeWorkingDirectory("/");

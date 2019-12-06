@@ -193,8 +193,6 @@ verifyCode = new GVerify("v_container");
 //登录用到的ajax验证
 var flag="false";
 var flag1="false";
-
-
 $("#loginEmail").blur(function(){
     var account= $("#loginEmail").val();
     if(null==account || ""==account ){

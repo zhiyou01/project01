@@ -5,7 +5,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 <configuration>
 	<typeAliases>
-		<!-- 用户 -->
+	    <!-- 用户 -->
 		<typeAlias type="com.zhiyou.pojo.User" alias="user"/>
+		<!-- Course -->
+		<typeAlias type="com.zhiyou.pojo.Course" alias="course"/>
+		<!-- video -->
+		<typeAlias type="com.zhiyou.pojo.Video" alias="video"/>
+		<!-- speaker -->
+		<typeAlias type="com.zhiyou.pojo.Speaker" alias="speaker"/>
 	</typeAliases>
 </configuration>	
