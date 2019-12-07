@@ -14,10 +14,10 @@
     <meta name="keywords" content="Web前端视频教程,大数据视频教程,HTML5视频教程,UI视频教程,PHP视频教程,java视频教程,python基础教程">
     <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
     
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/css.css">
-<link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
-<link href="http://localhost:8080/VideoProject/css/video-js.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/css.css">
+<link rel="icon" href="${pageContext.request.contextPath }/projectimg/favicon.png" type="image/png">
+<link href="${pageContext.request.contextPath }/css/video-js.css" rel="stylesheet" type="text/css">
     <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 
 </head>
@@ -27,13 +27,13 @@
 	<div class="container">
 		<span>欢迎来到IT培训的黄埔军校——智游教育！</span>
 			<div id="userBlock" style="float:right">
-				<a >退出</a>
+				<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
 				<a >${user.accounts }</a>
 			</div>
-		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
+		<a onclick="JavaScript:addFavorite2()"><img src="${pageContext.request.contextPath }/projectimg/sc.png" draggable="false">加入收藏</a>
 		
-		<a target="_blank"  href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
-		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
+		<a target="_blank"  href="${pageContext.request.contextPath }/Login.jsp"><img src="${pageContext.request.contextPath }/projectimg/we.png" draggable="false">后台管理</a>
+		<a class="color_e4"><img src="${pageContext.request.contextPath }/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 
 	</div>
 </header>
@@ -91,8 +91,8 @@
 				<p class="lecturer">${list.get(1).get(i).detail }</p>
 				<p class="lecturer">讲师：${list.get(1).get(i).speaker.speaker_name}</p>
 				<div class="v-info">
-					<span class="count"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">${list.get(1).get(i).play_num }</span>
-					<span class="duration"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">${list.get(1).get(i).time }</span>
+					<span class="count"><img src="${pageContext.request.contextPath }/projectimg/count.png" alt="">${list.get(1).get(i).play_num }</span>
+					<span class="duration"><img src="${pageContext.request.contextPath }/projectimg/player.png" alt="">${list.get(1).get(i).time }</span>
 				</div>
 			</div>
 			
@@ -108,7 +108,7 @@
 <footer>
 	<ul>
 		<li>
-			<img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" draggable="false">
+			<img src="${pageContext.request.contextPath }/projectimg/footer_logo.png" alt="" draggable="false">
 		</li>
 		<li class="mt25">
 			<h3>各校区地址</h3>
@@ -129,8 +129,8 @@
 				<li class="erwei">
 					<br>
 					<div>
-						<img class="weixin" src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" draggable="false">
-						<img class="weibo" src="http://localhost:8080/VideoProject/projectimg/a_002.png" alt="" draggable="false">
+						<img class="weixin" src="${pageContext.request.contextPath }/projectimg/a.png" alt="" draggable="false">
+						<img class="weibo" src="${pageContext.request.contextPath }/projectimg/a_002.png" alt="" draggable="false">
 					</div>
 				</li>
 			</ul>
@@ -140,9 +140,9 @@
 </footer>
 
 
-<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
-<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
-<script src="http://localhost:8080/VideoProject/js/index.js"></script>
-<script src="http://localhost:8080/VideoProject/js/video.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery-1.js"></script>
+<script src="${pageContext.request.contextPath }/js/gVerify.js"></script>
+<script src="${pageContext.request.contextPath }/js/index.js"></script>
+<script src="${pageContext.request.contextPath }/js/video.js"></script>
 </body>
 </html>

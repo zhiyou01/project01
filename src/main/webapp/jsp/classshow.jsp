@@ -12,9 +12,9 @@
 <meta name="keywords" content="Web前端视频教程,大数据视频教程,HTML5视频教程,UI视频教程,PHP视频教程,java视频教程,python基础教程">
 <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
    
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/css.css">
-<link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/css.css">
+<link rel="icon" href="${pageContext.request.contextPath }/projectimg/favicon.png" type="image/png">
     <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 </head>
 
@@ -24,7 +24,7 @@
 		<span>欢迎来到IT培训的黄埔军校——智游教育！</span>
 		
 			<div id="userBlock" style="float:right">
-				<a>退出</a>
+				<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
 				<c:if test="${!empty user }">
 					<a href="personalspace?id=${user.id}">${user.accounts}
 					<img src="${user.imgurl}" draggable="false" width="30px;" >
@@ -35,9 +35,9 @@
 				</c:if>
 			</div>
 
-		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
-		<a target="_blank"  href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
-		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
+		<a onclick="JavaScript:addFavorite2()"><img src="${pageContext.request.contextPath }/projectimg/sc.png" draggable="false">加入收藏</a>
+		<a target="_blank"  href="${pageContext.request.contextPath }/Login.jsp"><img src="${pageContext.request.contextPath }/projectimg/we.png" draggable="false">后台管理</a>
+		<a class="color_e4"><img src="${pageContext.request.contextPath }/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 
 	</div>
 </header>
@@ -46,16 +46,16 @@
 	<div class="banner">
 	<!-- //根据视频类型选择对应图片  -->
 		<c:if test="${subject_id ==1}">
-        	<img src="http://localhost:8080/VideoProject/projectimg/banner-1.jpg" width="100%" height="470px;">
+        	<img src="${pageContext.request.contextPath }/projectimg/banner-1.jpg" width="100%" height="470px;">
         	</c:if>
         	<c:if test="${subject_id ==6}">
-        		<img src="http://localhost:8080/VideoProject/projectimg/banner-6.jpg" width="100%" height="470px;">
+        		<img src="${pageContext.request.contextPath }/projectimg/banner-6.jpg" width="100%" height="470px;">
         	</c:if>
         	<c:if test="${subject_id ==10}">
-        		<img src="http://localhost:8080/VideoProject/projectimg/banner-10.jpg" width="100%" height="470px;">
+        		<img src="${pageContext.request.contextPath }/projectimg/banner-10.jpg" width="100%" height="470px;">
         	</c:if>
         	<c:if test="${subject_id ==11}">
-        		<img src="http://localhost:8080/VideoProject/projectimg/banner-11.jpg" width="100%" height="470px;">
+        		<img src="${pageContext.request.contextPath }/projectimg/banner-11.jpg" width="100%" height="470px;">
         	</c:if>
         </div>
         <!--面包屑导航-->
@@ -77,6 +77,8 @@
             		<p class="int"><span>课程介绍：</span>${list[i].course_desc}</p>
             	</div>
 			<ul>
+			
+			
 			    <c:forEach items="${list[i].videos}" var="video" >
             	<!-- 获取视频 -->
      	                <c:if test="${!empty user }">
@@ -85,8 +87,8 @@
 							<input type="hidden" id="user_id" value="${user.id}">
 			             	<div class="thum" style="background-image: url(${video.image_url})"></div>
 			             	<p>${video.title}</p>
-			             	<div class="classify-v-info"><span class="count" title="观看次数"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">${video.time}</span>
-			             	<span class="duration" title="视频时长"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">${video.play_num}</span></div>
+			             	<div class="classify-v-info"><span class="count" title="观看次数"><img src="${pageContext.request.contextPath }/projectimg/count.png" alt="">${video.play_num}</span>
+			             	<span class="duration" title="视频时长"><img src="${pageContext.request.contextPath }/projectimg/player.png" alt="">${video.time}</span></div>
 			             	</a>
 		             	</li> 
 						</c:if>
@@ -95,8 +97,8 @@
 							<input type="hidden" id="user_id" value="${user.id}">
 			             	<div class="thum" style="background-image: url(${video.image_url})"></div>
 			             	<p>${video.title}</p>
-			             	<div class="classify-v-info"><span class="count" title="观看次数"><img src="http://localhost:8080/VideoProject/projectimg/count.png" alt="">${video.time}</span>
-			             	<span class="duration" title="视频时长"><img src="http://localhost:8080/VideoProject/projectimg/player.png" alt="">${video.play_num}</span></div>
+			             	<div class="classify-v-info"><span class="count" title="观看次数"><img src="${pageContext.request.contextPath }/projectimg/count.png" alt="">${video.time}</span>
+			             	<span class="duration" title="视频时长"><img src="${pageContext.request.contextPath }/projectimg/player.png" alt="">${video.play_num}</span></div>
 			             	
 		             		</li> 
 		             	</c:if>
@@ -111,7 +113,7 @@
 <footer>
 	<ul>
 		<li>
-			<img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" draggable="false">
+			<img src="${pageContext.request.contextPath }/projectimg/footer_logo.png" alt="" draggable="false">
 		</li>
 		<li class="mt25">
 			<h3>各校区地址</h3>
@@ -132,8 +134,8 @@
 				<li class="erwei">
 					<br>
 					<div>
-						<img class="weixin" src="http://localhost:8080/VideoProject/projectimg/a_002.png" alt="" draggable="false">
-						<img class="weibo" src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" draggable="false">
+						<img class="weixin" src="${pageContext.request.contextPath }/projectimg/a_002.png" alt="" draggable="false">
+						<img class="weibo" src="${pageContext.request.contextPath }/projectimg/a.png" alt="" draggable="false">
 					</div>
 				</li>
 			</ul>
@@ -159,7 +161,7 @@
 				<div id="forget">
 				<!-- 忘记密码 跳到forgetpassword 后台获取当前输入框中 -->
 				    <a id="reg_open">注册</a>
-					<a href="http://localhost:8080/VideoProject/jsp/forgetPassword.jsp">忘记密码？</a>
+					<a href="${pageContext.request.contextPath }/jsp/forgetPassword.jsp">忘记密码？</a>
 				</div>
 				
 				<!-- 有一个点击事件 获取到输入框输入的邮箱密码 进行Ajax验证  -->
@@ -198,14 +200,14 @@
 
 
 
-<form action="http://localhost:8080/Voids/">
+<form action="${pageContext.request.contextPath }/Voids/">
 	<input type="text" value="1" id="isLogin">
 </form>
 
     
-<script src="http://localhost:8080/VideoProject//js/jquery-1.js"></script>
-<script src="http://localhost:8080/VideoProject//js/gVerify.js"></script>
-<script src="http://localhost:8080/VideoProject//js/index.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery-1.js"></script>
+<script src="${pageContext.request.contextPath }/js/gVerify.js"></script>
+<script src="${pageContext.request.contextPath }/js/index.js"></script>
 <script type="text/javascript">
 var flag =false;
 $("li").click(function(){

@@ -12,9 +12,9 @@
     <meta name="author" content="张育伟">
     
 
-    <link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-    <link rel="stylesheet" href="http://localhost:8080/VideoProject/css/profile.css">
-    <link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/profile.css">
+    <link rel="icon" href="${pageContext.request.contextPath }/projectimg/favicon.png" type="image/png">
     <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 </head>
 
@@ -23,7 +23,7 @@
 
 <header>
 	<div class="container top_bar clearfix">
-		<img src="http://localhost:8080/VideoProject/projectimg/logo.png">
+		<img src="${pageContext.request.contextPath }/projectimg/logo.png">
 		<div id="tele">
 			<span>4006-371-555</span>
 			<span>0371-88888598</span>
@@ -32,7 +32,7 @@
 	<menu>
 		<div class="container clearfix">
 			<ul class="clearfix f_left">
-				<li><a href="http://localhost:8080/VideoProject/index.jsp">首页</a></li>
+				<li><a href="h${pageContext.request.contextPath }/index.jsp">首页</a></li>
 				<li class="menu_active">个人中心</a></li>
 			</ul>
 			
@@ -49,11 +49,11 @@
 				<c:if test="${empty user.imgurl }">
 					<a href="updatephoto?id=${user.id}">
 					<!-- 检查一下有没有头像，没有头像给默认的图片 -->
-					<img id="avatar" src="http://localhost:8080/VideoProject/projectimg/avatar_lg.png"  width="30px;">
+					<img id="avatar" src="${pageContext.request.contextPath }/projectimg/avatar_lg.png"  width="30px;">
 					</a>
 				</c:if>
 				<!-- 退出当前界面到主界面 -->
-				<a href="http://localhost:8080/VideoProject/index.jsp" id="lay_out">退出</a>
+				<a href="${pageContext.request.contextPath }/index.jsp" id="lay_out">退出</a>
 			</div>
 		</div>
 	</menu>
@@ -82,7 +82,7 @@
 								<img id="avatar" src="${user.imgurl}" alt="图片走丢了" width="150px;">
 						  </c:if>
 						  <c:if test="${empty user.imgurl }">
-							 <img id="avatar" width="150px;" src="http://localhost:8080/VideoProject/projectimg/avatar_lg.png" alt="">
+							 <img id="avatar" width="150px;" src="${pageContext.request.contextPath }/projectimg/avatar_lg.png" alt="">
 		                  </c:if>            
 		                  <p>欢迎回来！</p>
                         </div>
@@ -101,9 +101,9 @@
     <footer>
         <div class="container">
             <ul>
-                <li><img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" id="foot_logo"></li>
+                <li><img src="${pageContext.request.contextPath }/projectimg/footer_logo.png" alt="" id="foot_logo"></li>
                 <li>版权所有：智游3G教育　　　©&nbsp;www.zhiyou100.com</li>
-                <li><img src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" id="wxgzh"></li>
+                <li><img src="${pageContext.request.contextPath }/projectimg/a.png" alt="" id="wxgzh"></li>
             </ul>
         </div>
     </footer>

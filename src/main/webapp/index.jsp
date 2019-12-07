@@ -14,9 +14,9 @@
 <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
 <meta name="author" content="张育伟">
 
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/css.css">
-<link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/css.css">
+<link rel="icon" href="${pageContext.request.contextPath }/projectimg/favicon.png" type="image/png">
 <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 </head>
 <body class="w100" style="padding-top: 0px;">
@@ -25,7 +25,7 @@
 	<div class="container">
 		<span>欢迎来到IT培训的黄埔军校——智游教育！</span>
 			<div id="userBlock" style="float:right">
-				<a href="exit">退出</a>
+				<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
                 <!-- 退出当前登录用户  -->
                 <!-- 点击判断当前是否有用户，有跳到个人空间，没有跳到登录  -->
 				<!-- 判断是否有用户，如果有，则显示用户账号和头像，如果没有，显示登录按钮 -->
@@ -39,17 +39,17 @@
 				</c:if>
 			</div>
 		<!-- 点击收藏  -->
-		<a onclick="JavaScript:addFavorite2()"><img src="http://localhost:8080/VideoProject/projectimg/sc.png" draggable="false">加入收藏</a>
+		<a onclick="JavaScript:addFavorite2()"><img src="${pageContext.request.contextPath }/projectimg/sc.png" draggable="false">加入收藏</a>
 		<!-- 点击进入后台管理的登录界面  普通用户点击无效 -->
-		<a target="_blank" href="http://localhost:8080/VideoProject/Login.jsp"><img src="http://localhost:8080/VideoProject/projectimg/we.png" draggable="false">后台管理</a>
+		<a target="_blank" href="${pageContext.request.contextPath }/Login.jsp"><img src="${pageContext.request.contextPath }/projectimg/we.png" draggable="false">后台管理</a>
 		
-		<a class="color_e4"><img src="http://localhost:8080/VideoProject/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
+		<a class="color_e4"><img src="${pageContext.request.contextPath }/projectimg/phone.png" draggable="false"> 0371-88888598　　4006-371-555</a>
 	</div>
 </header>
 
     <!--banner图-->
     <div class="banner index-banner"  >
-	<img alt="" src="http://localhost:8080/VideoProject/projectimg/banner-2.jpg"  >
+	<img alt="" src="${pageContext.request.contextPath }/projectimg/banner-2.jpg"  >
 	</div>
 	
     <!--模块化课程-->
@@ -62,7 +62,7 @@
                         <td colspan="2">
                             <!--点击跳到课程详情页-->
                             <a href="webClass?accounts=${user.accounts}">
-                                <img src="http://localhost:8080/VideoProject/projectimg/html5.jpg" alt="" class="image scale" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/html5.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>Web前端教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -72,7 +72,7 @@
                         <td>
                             <!--点击跳到课程详情页-->
                             <a href="uiClass?accounts=${user.accounts}">
-                                <img src="http://localhost:8080/VideoProject/projectimg/ui.jpg" alt="" class="image scale" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/ui.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>UI设计教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -81,7 +81,7 @@
                         </td>
                         <td rowspan="2" class="one_three">
                             <a  class="opacity5">
-                                <img src="http://localhost:8080/VideoProject/projectimg/java.jpg" alt="" class="image" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/java.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>Java教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -92,7 +92,7 @@
                     <tr>
                         <td>
                             <a  class="opacity5">
-                                <img src="http://localhost:8080/VideoProject/projectimg/bigdata.jpg" alt="" class="image" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/bigdata.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>大数据教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -102,7 +102,7 @@
                         <td colspan="2">
                         <!--点击跳到课程详情页-->
                             <a href="pyClass?accounts=${user.accounts}">
-                                <img src="http://localhost:8080/VideoProject/projectimg/python.jpg" alt="" class="image scale" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/python.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>Python教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -113,7 +113,7 @@
                     <tr>
                         <td colspan="2">
                             <a href="phpClass?accounts=${user.accounts}">
-                                <img src="http://localhost:8080/VideoProject/projectimg/php.jpg" alt="" class="image scale" draggable="false">
+                                <img src="${pageContext.request.contextPath }/projectimg/php.jpg" alt="" class="image scale" draggable="false">
                                 <div class="headline">
                                     <span>PHP教程</span>
                                     <img src="projectimg/arrow.png" alt="">
@@ -165,7 +165,7 @@
 <footer>
 	<ul>
 		<li>
-			<img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" draggable="false">
+			<img src="${pageContext.request.contextPath }/projectimg/footer_logo.png" alt="" draggable="false">
 		</li>
 		<li class="mt25">
 			<h3>各校区地址</h3>
@@ -186,8 +186,8 @@
 				<li class="erwei">
 					<br>
 					<div>
-						<img class="weixin" src="http://localhost:8080/VideoProject/projectimg/a_002.png" alt="" draggable="false">
-						<img class="weibo" src="http://localhost:8080/VideoProject/projectimg/a.png" alt="" draggable="false">
+						<img class="weixin" src="${pageContext.request.contextPath }/projectimg/a_002.png" alt="" draggable="false">
+						<img class="weibo" src="${pageContext.request.contextPath }/projectimg/a.png" alt="" draggable="false">
 					</div>
 				</li>
 			</ul>
@@ -212,7 +212,7 @@
 				<div id="forget">
 				<!-- 忘记密码 跳到forgetpassword 后台获取当前输入框中 -->
 				    <a id="reg_open">注册</a>
-					<a href="http://localhost:8080/VideoProject/jsp/forgetPassword.jsp">忘记密码？</a>
+					<a href="${pageContext.request.contextPath }/jsp/forgetPassword.jsp">忘记密码？</a>
 				</div>
 				
 				<!-- 有一个点击事件 获取到输入框输入的邮箱密码 进行Ajax验证  -->
@@ -249,8 +249,8 @@
 	</div>
 </div>
     
-<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
-<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
-<script src="http://localhost:8080/VideoProject/js/index.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery-1.js"></script>
+<script src="${pageContext.request.contextPath }/js/gVerify.js"></script>
+<script src="${pageContext.request.contextPath }/js/index.js"></script>
 </body>
 </html>

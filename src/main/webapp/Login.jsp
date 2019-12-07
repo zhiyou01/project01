@@ -14,9 +14,9 @@
 <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
 <meta name="author" content="张育伟">
 
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-<link rel="stylesheet" href="http://localhost:8080/VideoProject/css/css.css">
-<link rel="icon" href="http://localhost:8080/VideoProject/projectimg/favicon.png" type="image/png">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/css.css">
+<link rel="icon" href="${pageContext.request.contextPath }/projectimg/favicon.png" type="image/png">
 <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
 				<div id="forget">
 				<!-- 忘记密码 跳到forgetpassword 后台获取当前输入框中 -->
 				  
-					<a href="http://localhost:8080/VideoProject/jsp/forgetPassword1.jsp">忘记密码？</a>
+					<a href="${pageContext.request.contextPath }/jsp/forgetPassword1.jsp">忘记密码？</a>
 				</div>
 				
 				<!-- 有一个点击事件 获取到输入框输入的邮箱密码 进行Ajax验证  -->
@@ -51,12 +51,12 @@
 
 
     
-<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
-<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery-1.js"></script>
+<script src="${pageContext.request.contextPath }/js/gVerify.js"></script>
 <script type="text/javascript">
 $('#login_close').click(function(){
  
-    window.location.href="http://localhost:8080/VideoProject/index.jsp";
+    window.location.href="${pageContext.request.contextPath }/index.jsp";
 });
 
 

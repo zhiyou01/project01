@@ -43,7 +43,7 @@
 				<li class="active"><a href="selectAll">课程管理</a></li>
 			</ul>
 			<p class="navbar-text navbar-right">
-				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a  class="navbar-link">退出</a>
+				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a  href="${pageContext.request.contextPath }/index.jsp">退出</a>
 			</p>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -121,12 +121,12 @@
 				<ul class="pagination">
 					<c:if test="${page>1 }">
 						<li class="paginate_button previous disabled }"><a
-							href="selectAll?page=${page-1 }&course_title=${course_title}">上一页</a></li>
+							href="selectAll?page=${page-1 }&course_title=${course_title}" style="cursor: pointer">上一页</a></li>
 					</c:if>
-					<li class="paginate_button active"><a href="selectAll?page=${page}&course_title=${course_title}">${page }</a></li>
+					<li class="paginate_button active"><a href="selectAll?page=${page}&course_title=${course_title}" style="cursor: pointer">${page }</a></li>
 					<c:if test="${page<zpage }">
 						<li class="paginate_button next disabled"><a
-							href="selectAll?page=${page+1 }&course_title=${course_title}">下一页</a></li>
+							href="selectAll?page=${page+1 }&course_title=${course_title}" style="cursor: pointer">下一页</a></li>
 					</c:if>
 				</ul>
 			</div>

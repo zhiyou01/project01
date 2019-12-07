@@ -25,6 +25,10 @@
 		th {
 			text-align: center;
 		}
+		
+		.yy{
+			corsor:default;
+		}
 		</style>
 	</head>
 
@@ -60,7 +64,7 @@
     
     <div class="jumbotron" style="padding-top: 15px;padding-bottom: 15px;">
 	  <div class="container">
-	          <h2>课程管理</h2>
+	          <h2>视频管理</h2>
 	  </div>
 	</div>
 	
@@ -150,12 +154,12 @@
 				<ul class="pagination">
 					<c:if test="${page>1 }">
 						<li class="paginate_button previous disabled }"><a
-							href="VideoSelect?page=${page-1 }&title=${title}">上一页</a></li>
+							href="VideoSelect?page=${page-1 }&title=${title}" style="cursor: pointer">上一页</a></li>
 					</c:if>
-					<li class="paginate_button active"><a href="VideoSelect?page=${page}&title=${title}">${page }</a></li>
+					<li class="paginate_button active yy"><a href="VideoSelect?page=${page}&title=${title}" style="cursor: pointer">${page }</a></li>
 					<c:if test="${page<zpage }">
-						<li class="paginate_button next disabled"><a
-							href="VideoSelect?page=${page+1}&title=${title}">下一页</a></li>
+						<li class="paginate_button next disabled yy"><a
+							href="VideoSelect?page=${page+1}&title=${title}" style="cursor: pointer">下一页</a></li>
 					</c:if>
 				</ul>
 			</div>

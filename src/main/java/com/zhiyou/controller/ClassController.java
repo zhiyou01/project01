@@ -77,31 +77,14 @@ public class ClassController {
 		req.getRequestDispatcher("jsp/classshow.jsp").forward(req, resp);
 	}
 	
-	@RequestMapping("/playvideo")  //http://localhost:8080/VideoProject/login
+	@RequestMapping("/playvideo")  
 	public  void  playvideo(Integer video_id,Integer subject_id,int id,HttpServletRequest req,HttpServletResponse resp) throws Exception{
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		/*
-		 * List<Course> list = Service.selectBySubjectid(subject_id);
-		 * 
-		 * //查询video和老师 Video video = videoservice.selectByVideoid(video_id); Speaker
-		 * speaker = speakerservice.selectBySpeakerid(video.getSpeaker_id());
-		 * 
-		 * req.setAttribute("video", video);
-		 * 
-		 * req.setAttribute("speaker", speaker);
-		 * 
-		 * req.setAttribute("list", list);
-		 */
+	
 		User user = service1.selectById(id);
-		
-		
 		req.setAttribute("user", user);
 		/* req.setAttribute("subject_id", subject_id); */
-		
-		
 		//获取视频地址和老师信息
 		List<Video> video = videoservice.selectVideoUrl(video_id);
-		
 		//查询课程信息和教师信息
 		List<Video> video2 = videoservice.selectAlls(subject_id);
 		//创建一个集合用来接收以上两条数据
@@ -110,8 +93,6 @@ public class ClassController {
 		list.add(video2);
 		
 		req.setAttribute("list",list);
-		
-		
 		req.getRequestDispatcher("jsp/playvideo.jsp").forward(req, resp);
 	}
 	

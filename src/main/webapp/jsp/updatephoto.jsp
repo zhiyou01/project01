@@ -8,15 +8,15 @@
     <meta name="renderer" content="webkit">
     <meta name="keywords" content="Web前端视频教程,大数据视频教程,HTML5视频教程,UI视频教程,PHP视频教程,java视频教程,python基础教程">
     <meta name="description" content="智游教育在线课程视频,为您提供java,python,HTML5,UI,PHP,大数据等学科经典视频教程在线浏览学习,精细化知识点解析,深入浅出,想学不会都难,智游教育,学习成就梦想！">
-    <link rel="stylesheet" href="http://localhost:8080/VideoProject/css/base.css">
-    <link rel="stylesheet" href="http://localhost:8080/VideoProject/css/profile.css">
-    <link rel="stylesheet" href="http://localhost:8080/VideoProject/css/jquery.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/profile.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/jquery.css">
     <title>在线公开课-智游教育|java|大数据|HTML5|python|UI|PHP视频教程</title>
 </head>
 <body class="w100">
 <header>
 	<div class="container top_bar clearfix">
-		<img src="http://localhost:8080/VideoProject/projectimg/logo.png" alt="智游">
+		<img src="${pageContext.request.contextPath }/projectimg/logo.png" alt="智游">
 		<div id="tele">
 			<span>4006-371-555</span>
 			<span>0371-88888598</span>
@@ -25,7 +25,7 @@
 	<menu>
 		<div class="container clearfix">
 			<ul class="clearfix f_left">
-				<li><a href="http://localhost:8080/VideoProject/index.jsp">首页</a></li>
+				<li><a href="${pageContext.request.contextPath }/index.jsp">首页</a></li>
 				<li class="menu_active"><a>个人空间</a></li>
 			</ul>
 			<div id="user_bar">
@@ -34,10 +34,10 @@
 					<img id="avatar" src="${user.imgurl}" >
 				</c:if>
 				<c:if test="${empty user.imgurl}">
-					<img id="avatar" src="http://localhost:8080/VideoProject/projectimg/avatar_lg.png">
+					<img id="avatar" src="${pageContext.request.contextPath }/projectimg/avatar_lg.png">
 				</c:if>
 				</a>
-				<a>退出</a>
+				<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
 			</div>
 		</div>
 	</menu>
@@ -62,7 +62,7 @@
 								<img src="${user.imgurl}" >
 							</c:if>
 							<c:if test="${empty user.imgurl}">
-								<img src="http://localhost:8080/VideoProject/projectimg/avatar_lg.png">
+								<img src="${pageContext.request.contextPath }/projectimg/avatar_lg.png">
 							</c:if>
 							<p style="text-align: center;">当前头像</p>
                         </div>
@@ -90,7 +90,7 @@
 <footer>
 	<div class="container">
 		<ul>
-			<li><img src="http://localhost:8080/VideoProject/projectimg/footer_logo.png" alt="" id="foot_logo"></li>
+			<li><img src="${pageContext.request.contextPath }/projectimg/footer_logo.png" alt="" id="foot_logo"></li>
 			<li>版权所有：智游3G教育　　　©&nbsp;www.zhiyou100.com</li>
 			<li><img src="../projectimg/a.png" alt="" id="wxgzh"></li>
 		</ul>
@@ -100,10 +100,10 @@
 
 
 
-<script src="http://localhost:8080/VideoProject/js/jquery-1.js"></script>
-<script src="http://localhost:8080/VideoProject/js/gVerify.js"></script>
-<script src="http://localhost:8080/VideoProject/js/index.js"></script>
-<script src="http://localhost:8080/VideoProject/js/jquery.js"></script>
-<script src="http://localhost:8080/VideoProject/js/Jcrop_upload.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery-1.js"></script>
+<script src="${pageContext.request.contextPath }/js/gVerify.js"></script>
+<script src="${pageContext.request.contextPath }/js/index.js"></script>
+<script src="${pageContext.request.contextPath }/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath }/js/Jcrop_upload.js"></script>
 </body>
 </html>

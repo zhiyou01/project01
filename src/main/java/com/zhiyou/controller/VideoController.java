@@ -31,15 +31,18 @@ public class VideoController {
 	public String selectAll(HttpServletRequest request,HttpServletResponse resp) {
 		String title = request.getParameter("title")==null?"":request.getParameter("title");
 		int count = videoService.selectCount(title);
-		System.out.println(count);
 		int page=request.getParameter("page")==null||request.getParameter("page")==""? 1:Integer.valueOf(request.getParameter("page"));
 		request.setAttribute("page", page);
 		request.setAttribute("count", count);
-		
 		List<Video> list = videoService.selectAll((page-1)*5,5,title);
-		request.setAttribute("title", title);
-		request.setAttribute("list", list);
-		return "Video";
+		if (count != 0) {
+			request.setAttribute("title", title);
+			request.setAttribute("list", list);
+			return "Video";
+		}else {
+			return "NullVideo";
+		}
+		
 	}
 	//鐐瑰嚮娣诲姞鐨勯〉闈㈣烦杞�
 	@RequestMapping("insertVideo")

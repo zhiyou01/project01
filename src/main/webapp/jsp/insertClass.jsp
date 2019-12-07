@@ -54,7 +54,7 @@ b {
 				<li class="active"><a href="selectAll">课程管理</a></li>
 			</ul>
 			<p class="navbar-text navbar-right">
-				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a class="navbar-link">退出</a>
+				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
 			</p>
 		</div>
 
@@ -111,6 +111,7 @@ b {
 				</div>
 			</div>
 		</form>
+		<button   onclick="buyshow()" type="submit" id="btn" class="btn btn-info dropdown-toggle" style="float:right">返回</button>
 	</div>
 
 	<!-- å¦æIEçæ¬å°äº9ï¼å è½½ä»¥ä¸js,è§£å³ä½çæ¬å¼å®¹é®é¢ -->
@@ -123,7 +124,11 @@ b {
 <script src="${pageContext.request.contextPath}/js/confirm.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/message_cn.js"></script>
-
+<script type="text/javascript">
+	function buyshow(){
+		location.href="selectAll";
+	}
+</script>
 
 
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zhiyou.pojo.User;
 import com.zhiyou.service.AdminService;
 import com.zhiyou.service.UserService;
+import com.zhiyou.service.impl.SessionKey;
 
 @Controller
 public class LoginController {
@@ -30,6 +31,7 @@ public class LoginController {
 	public void  login(String accounts,String password,HttpServletRequest req,HttpServletResponse resp) throws Exception {
 		User user = service.loginSelect(req, accounts, password);
 		req.setAttribute("user", user);
+		req.getSession().setAttribute(SessionKey.USER_LOGIN, user);
 		req.getRequestDispatcher("index.jsp").forward(req, resp);
 	}
 	
@@ -72,7 +74,6 @@ public class LoginController {
          User user=new User();
          user.setPassword(name1);
          user.setAccounts(name2);
-         System.out.println(user);
 	     boolean b = service.selectUser(user);
 	     resp.getWriter().write(b+""); 	
 	}
@@ -124,7 +125,6 @@ public class LoginController {
          User user=new User();
          user.setPassword(name1);
          user.setAccounts(name2);
-         System.out.println(user);
 	     boolean b = service.selectUser(user);
 	     resp.getWriter().write(b+""); 	
 	}

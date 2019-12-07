@@ -53,7 +53,7 @@ b {
 				<li><a href="${pageContext.request.contextPath}/selectAll">课程管理</a></li>
 			</ul>
 			<p class="navbar-text navbar-right">
-				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a class="navbar-link">退出</a>
+				<span>${admin.accounts}</span> <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;&nbsp;<a href="${pageContext.request.contextPath }/index.jsp">退出</a>
 			</p>
 		</div>
 
@@ -111,6 +111,7 @@ b {
 				</div>
 			</div>
 		</form>
+		<button   onclick="buyshow()" type="submit" id="btn" class="btn btn-info dropdown-toggle" style="float:right">返回</button>
 	</div>
 
 <!--[if lt IE 9]>
@@ -122,10 +123,9 @@ b {
 <script src="${pageContext.request.contextPath}/js/confirm.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/message_cn.js"></script>
-
-
-
-
-
-
+<script type="text/javascript">
+	function buyshow(){
+		location.href="${pageContext.request.contextPath}/SpeakerSelect";
+	}
+</script>
 <div id="modal-background" class=""></div><div id="confirm-modal" class="modal fade role=" dialog"="" tabindex="-1"><div class="modal-dialog modal-undefined"><div class="modal-content"><div class="modal-header"><button id="modal-upper-close" class="close modal-close" aria-label="Close" type="button"><span aria-hidden="true">×</span></button><h4 id="modal-title" class="modal-title">Modal Title</h4></div><div id="modal-body" class="modal-body"> Modal Message </div><div id="modal-footer" class="modal-footer"></div></div></div></div><div id="modal-background" class=""></div></body></html>
