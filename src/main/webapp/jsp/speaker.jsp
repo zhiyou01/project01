@@ -67,8 +67,7 @@
 	<div class="container">
 	    <button onclick="showAddPage()" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		      添加
-		</button>
-		
+		</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<button onclick="deleteAll()" type="submit" id="btn" class="btn btn-info dropdown-toggle">
 		      批量删除
 		</button>

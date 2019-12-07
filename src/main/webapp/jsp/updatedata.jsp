@@ -86,7 +86,7 @@
                                 <div class="form_group">
                                     <span class="dd">性　别：</span>
                                     <input id="man" name="sex" type="radio" value="man"><label for="man">男</label>
-                                    <input id="woman" naem="sex" type="radio" value="woman"><label for="woman">女</label>     
+                                    <input id="woman" name="sex" type="radio" value="woman"><label for="woman">女</label>     
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">生　日：</span>  
