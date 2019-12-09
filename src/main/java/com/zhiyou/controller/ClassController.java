@@ -82,7 +82,14 @@ public class ClassController {
 	
 		User user = service1.selectById(id);
 		req.setAttribute("user", user);
+		
+		//
+		Video video1 = videoservice.selectByID(video_id);
+		Integer play_num = video1.getPlay_num();
+		video1.setPlay_num(play_num+1);
+		videoservice.update(video1);
 		/* req.setAttribute("subject_id", subject_id); */
+		
 		//获取视频地址和老师信息
 		List<Video> video = videoservice.selectVideoUrl(video_id);
 		//查询课程信息和教师信息
